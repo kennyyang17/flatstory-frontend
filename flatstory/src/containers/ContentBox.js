@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GameContainer from './GameContainer'
 
+
 class ContentBox extends Component {
     render() {
         return (

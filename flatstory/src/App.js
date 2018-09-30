@@ -7,6 +7,7 @@ import About from './components/About';
 import Play from './components/Play';
 import ContentBox from './containers/ContentBox'
 import LoginButtonContainer from './components/LoginButtonContainer';
+import Lore from './components/Lore';
 
 class App extends Component {
   render() {
@@ -21,14 +22,15 @@ class App extends Component {
       <Router>
         <div>
           <NavBar />
-          <ContentBox style={style}> 
+          <ContentBox style={style}>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/about" component={About}/> 
-            <Route exact path="/play" component={Play}/> 
-          </ContentBox> 
-        </div> 
+            <Route exact path="/about" component={About}/>
+            <Route exact path="/play" component={Play}/>
+            <Route exact path="/lore" component={Lore}/>
+          </ContentBox>
+        </div>
       </Router>
-       
+
       </div>
     );
   }
