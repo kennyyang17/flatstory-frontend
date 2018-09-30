@@ -2,8 +2,8 @@ import React from 'react';
 
 const Lore = () => {
     return (
-        <div>
-            Lore Page
+        <div className="Lore">
+            LOREEEEEE
         </div>
     );
 };

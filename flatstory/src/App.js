@@ -7,6 +7,9 @@ import About from './components/About';
 import Play from './components/Play';
 import ContentBox from './containers/ContentBox'
 import LoginButtonContainer from './components/LoginButtonContainer';
+import Lore from './components/Lore';
+import Devs from './components/Devs';
+// import Game from './components/Game';
 
 class App extends Component {
   render() {
@@ -25,8 +28,11 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/about" component={About}/> 
             <Route exact path="/play" component={Play}/> 
+            <Route exact path="/about/lore" component={Lore}/>
+            {/* <Route exact path="/about/game" component={Game}/> */}
+            <Route exact path="/about/devs" component={Devs}/>
           </ContentBox> 
-        </div> 
+        </div>
       </Router>
        
       </div>

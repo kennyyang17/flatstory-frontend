@@ -2,7 +2,7 @@ import React from 'react';
 
 const Devs = () => {
     return (
-        <div>
+        <div className="Devs">
             Devs Page
         </div>
     );
