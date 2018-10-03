@@ -1,8 +1,14 @@
 import React from 'react'
 
- var Phaser = require('../../../node_modules/phaser/src/phaser-arcade-physics.js')
- const Game = (props) => {
-   var config = {
+ let Phaser = require('../../../node_modules/phaser/src/phaser-arcade-physics.js')
+ class Game extends React.Component{
+   constructor(props){
+     super(props)
+
+   }
+
+   render(){
+   let config = {
       type: Phaser.AUTO,
       width: 800,
       height: 600,
@@ -20,23 +26,25 @@ import React from 'react'
       },
       parent: 'phaser-container'
   };
-  var player;
-  var stars;
-  var bombs;
-  var platforms;
-  var cursors;
-  var score = 0;
-  var gameOver = false;
-  var scoreText;
+  let player;
+  let stars;
+  let bombs;
+  let platforms;
+  let cursors;
+  let score = 0;
+  let gameOver = false;
+  let scoreText;
 
-   var game = new Phaser.Game(config);
+   let game = new Phaser.Game(config);
+   console.log(game);
    function preload ()
   {
       this.load.image('maple', './assets/maple.png');
       this.load.image('ground', 'assets/platform.png');
-      this.load.image('star', 'assets/star.png');
+      this.load.image('star', 'assets/ruby.png');
       this.load.image('bomb', 'assets/bomb.png');
       this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
+      //32:48
   }
    function create ()
   {
@@ -103,7 +111,7 @@ import React from 'react'
       {
           return;
       }
-       if (cursors.left.isDown)
+      if (cursors.left.isDown)
       {
           player.setVelocityX(-160);
            player.anims.play('left', true);
@@ -135,8 +143,8 @@ import React from 'react'
           stars.children.iterate(function (child) {
                child.enableBody(true, child.x, 0, true, true);
            });
-           var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
-           var bomb = bombs.create(x, 16, 'bomb');
+           let x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+           let bomb = bombs.create(x, 16, 'bomb');
           bomb.setBounce(1);
           bomb.setCollideWorldBounds(true);
           bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -149,11 +157,13 @@ import React from 'react'
        player.setTint(0xff0000);
        player.anims.play('turn');
        gameOver = true;
-       props.gameOver(score)
+       this.props.gameOver(score)
    }
    return(
     <div id="phaser-container">
     </div>
   )
+}//render
  }
+
  export default Game

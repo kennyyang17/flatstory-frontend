@@ -9,16 +9,23 @@ import ContentBox from './containers/ContentBox'
 import LoginButtonContainer from './components/LoginButtonContainer';
 import Lore from './components/Lore';
 
+
+import GamePlay from './components/GamePlay'
+import Devs from './components/Devs'
+
+
 class App extends Component {
   render() {
     const style = {
       border: '1px solid red',
       padding: '6px',
       margin: '6px 6px 6px',
-      height: '400px'
+      height: '800px',
+      resize: 'inherit',
   }
+  console.log("routing");
     return (
-      <div className="App">
+      <div className="container">
       <Router>
         <div>
           <NavBar />
@@ -27,6 +34,8 @@ class App extends Component {
             <Route exact path="/about" component={About}/>
             <Route exact path="/play" component={Play}/>
             <Route exact path="/lore" component={Lore}/>
+            <Route exact path="/gameplay" component={GamePlay}/>
+            <Route exact path="/devs" component={Devs}/>
           </ContentBox>
         </div>
       </Router>

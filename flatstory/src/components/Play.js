@@ -1,5 +1,6 @@
 import React from 'react';
 import GameContainer from '../containers/GameContainer';
+import Game from './game/Game';
 
 const Play = () => {
 
@@ -7,10 +8,12 @@ const Play = () => {
     <div align="CENTER" >
       Play Page
       <table>
-          <tr>
-              <td style={{border: "1px solid purple"}}><GameContainer/></td>
-              <td style={{border: "1px solid teal"}}>PUT PLAYER CONTAINER HERE</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td style={{border: "1px solid purple"}}><GameContainer /></td>
+              <td style={{border: "1px solid teal"}}>MAKE PLAYER BOX TODAY!!</td>
+            </tr>
+          </tbody>
       </table>
     </div>
   );

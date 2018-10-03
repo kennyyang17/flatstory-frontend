@@ -4,6 +4,7 @@ const Devs = () => {
     return (
         <div>
             Devs Page
+            INSERT CHRIS, SCOTT, KENNY
         </div>
     );
 };

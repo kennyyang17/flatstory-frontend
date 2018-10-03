@@ -4,7 +4,7 @@ const Home = () => {
 
   return (
     <div>
-      Home Page
+      <img src='https://i.postimg.cc/Kz82mHbH/Flat_Story_LOGO.png' height="50%" width = "50%" border='0' alt='Flat_Story_LOGO'/>
     </div>
   );
 }
