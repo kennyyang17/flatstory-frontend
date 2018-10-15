@@ -9,14 +9,16 @@ import GameBeta from '../components/game/GameBeta'
     }
 
    gameOver = (score) => {
+     debugger
     this.setState({
-        level:'gameOver',
+        level:'start',
         score:score})
   }
 
    render(){
      switch (this.state.level) {
        case 'start':
+       console.log("start game")
          return (
            <div className="gameContainer">
              <GameBeta gameOver={this.gameOver}/>
@@ -24,6 +26,7 @@ import GameBeta from '../components/game/GameBeta'
          )
          break
        case 'gameOver':
+       console.log("game over")
          return (
            <div className="gameContainer">
              <h1>Score: {this.state.score}</h1>
@@ -31,14 +34,15 @@ import GameBeta from '../components/game/GameBeta'
          )
          break
        default:
-         break
-     }
        return (
         <React.Fragment>
           gameContainer
           <GameBeta gameOver={this.gameOver} />
         </React.Fragment>
        )
+         break
+     }
+
    }
 }
  export default GameContainer

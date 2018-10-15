@@ -1,10 +1,11 @@
 import React from 'react'
+import Phaser from 'phaser'
 
- let Phaser = require('../../../node_modules/phaser/src/phaser-arcade-physics.js')
+ //let Phaser = require('../../../node_modules/phaser/src/phaser-arcade-physics.js')
  export default class GameBeta extends React.Component{
    constructor(props){
      super(props)
-
+     this.gameOver = props.gameOver
      this.state = {
        myScore: 0
      }
@@ -114,7 +115,22 @@ import React from 'react'
      {
          if (gameOver)
          {
-             return;
+           console.log("game over man! your score was:", score)
+           debugger
+           setTimeout(() => {
+
+            this.game.destroy();
+            this.game.canvas.remove(); // this can go here or after the game = new section
+             game = new Phaser.Game(config);
+
+             // this.game.canvas.remove()
+              }, 2000);
+             gameOver = false;
+             score = 0;
+             // game.state.start = update();
+
+
+           // return;
          }
          if (cursors.left.isDown)
          {
@@ -162,7 +178,9 @@ import React from 'react'
         player.setTint(0xff0000);
         player.anims.play('turn');
         gameOver = true;
-        
+
+
+
 
 
     }
@@ -174,7 +192,7 @@ import React from 'react'
 
   render(){
      return(
-        <div id="phaser-container">
+        <div id="phaser-container" gameOver={this.props.gameOver}>
         </div>
       )
 }//render
